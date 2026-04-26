@@ -55,14 +55,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault();
                 return;
             }
-            
+
             // If it's an anchor link, let the smooth scroll handle it
             if (btn.tagName.toLowerCase() === 'a') return;
 
             // Otherwise, it's a button
             // Here you would normally redirect to a checkout or form
             const text = btn.innerText;
-            if(text.includes('Gratis')) {
+            if (text.includes('Gratis')) {
                 alert('¡Redirigiendo al formulario de registro gratuito!');
             } else if (text.includes('Apunto')) {
                 alert('¡Redirigiendo a la página de pago del reto!');
