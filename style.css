@@ -1,0 +1,358 @@
+/* style.css */
+:root {
+    --color-bg-main: #FFFFFF;
+    --color-primary: #F4C70F;
+    /* Mustard Yellow */
+    --color-secondary: #FFF8F0;
+    /* Beige/Cream */
+    --color-neutral: #DDD7D7;
+    /* Light Gray */
+    --color-text-dark: #222222;
+    --color-text-light: #555555;
+
+    --transition-speed: 0.3s;
+    --border-radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--color-bg-main);
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    color: var(--color-text-dark);
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+}
+
+/* Buttons */
+.cta-button {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    border: none;
+}
+
+.primary-btn {
+    background-color: var(--color-primary);
+    color: var(--color-text-dark);
+    box-shadow: 0 4px 15px rgba(244, 199, 15, 0.4);
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(244, 199, 15, 0.6);
+}
+
+.secondary-btn {
+    background-color: var(--color-text-dark);
+    color: #FFFFFF;
+}
+
+.secondary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.outline-btn {
+    background-color: transparent;
+    color: var(--color-text-dark);
+    border: 2px solid var(--color-neutral);
+    padding: 12px 26px;
+}
+
+.outline-btn:hover {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.disabled:hover {
+    transform: none;
+    background-color: transparent;
+    border-color: var(--color-neutral);
+}
+
+/* Hero Section */
+.hero {
+    padding: 100px 0 80px;
+    text-align: center;
+    background: radial-gradient(circle at top, var(--color-secondary) 0%, var(--color-bg-main) 70%);
+}
+
+.hero .subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.hero .description {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    font-size: 1.2rem;
+}
+
+/* Challenges Section */
+.challenges {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.section-desc {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Cards */
+.card {
+    background-color: var(--color-bg-main);
+    border: 1px solid var(--color-neutral);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    text-align: center;
+    transition: all var(--transition-speed) ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-color: var(--color-primary);
+}
+
+.card-tag {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.challenge-name {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-text-dark);
+    margin-bottom: 25px;
+}
+
+.card-free {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+}
+
+.card-free .price {
+    color: var(--color-primary);
+}
+
+/* Premium Section */
+.premium {
+    padding: 80px 0;
+}
+
+.premium-box {
+    background-color: var(--color-secondary);
+    border-radius: var(--border-radius);
+    border: 2px solid var(--color-primary);
+    padding: 60px 40px;
+    text-align: center;
+    position: relative;
+}
+
+.premium-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-text-dark);
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.premium-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.features-list {
+    list-style: none;
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto 40px;
+}
+
+.features-list li {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: var(--color-text-dark);
+    font-weight: 400;
+}
+
+.price-box {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.old-price {
+    font-size: 1.2rem;
+    color: var(--color-text-light);
+    text-decoration: line-through;
+    margin-bottom: 5px;
+}
+
+.current-price {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.premium-btn {
+    font-size: 1.3rem;
+    padding: 18px 40px;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--color-text-dark);
+    color: #FFFFFF;
+    text-align: center;
+    padding: 60px 0 30px;
+}
+
+.footer h3 {
+    color: #FFFFFF;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.footer p {
+    color: #AAAAAA;
+}
+
+.footer-btn {
+    background-color: var(--color-primary);
+    color: var(--color-text-dark);
+    margin-bottom: 60px;
+}
+
+.footer-btn:hover {
+    background-color: #e3b60e;
+    transform: translateY(-3px);
+}
+
+.copyright {
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .hero {
+        padding: 60px 0;
+    }
+
+    .premium-box {
+        padding: 40px 20px;
+    }
+
+    .current-price {
+        font-size: 2.5rem;
+    }
+}
