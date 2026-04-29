@@ -3,7 +3,8 @@
     --color-bg-main: #FFFFFF;
     --color-primary: #F4C70F;
     /* Mustard Yellow */
-    --color-secondary: #FFF8F0;
+    /* --color-secondary: #FFF8F0; */
+    --color-secondary: #FFFFFF;
     /* Beige/Cream */
     --color-neutral: #DDD7D7;
     /* Light Gray */
@@ -160,10 +161,10 @@ p {
 }
 
 .expert-subtitle {
-    color: var(--color-primary); 
+    color: var(--color-primary);
     font-style: italic;
     font-weight: 600;
-    text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
 }
 
 .expert-lead {
@@ -186,7 +187,7 @@ p {
     border-radius: var(--border-radius);
     padding: 30px;
     color: var(--color-text-light);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .pain-card p {
@@ -224,7 +225,8 @@ p {
 /* Challenges Section */
 .challenges {
     padding: 80px 0;
-    background-color: var(--color-secondary); /* Beige para contrastar con el blanco general */
+    background-color: var(--color-secondary);
+    /* Beige para contrastar con el blanco general */
 }
 
 /* Challenges Header */
@@ -249,9 +251,10 @@ p {
 }
 
 .challenges-subtitle {
-    color: var(--color-primary); 
+    color: var(--color-primary);
     font-style: italic;
-    text-shadow: 1px 1px 0px rgba(0,0,0,0.1); /* Sombra para legibilidad del amarillo en fondo claro */
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+    /* Sombra para legibilidad del amarillo en fondo claro */
 }
 
 .challenges-desc {
@@ -262,19 +265,19 @@ p {
 }
 
 .meta-card {
-    background-color: var(--color-bg-main); 
-    border: 2px solid var(--color-neutral); 
+    background-color: var(--color-bg-main);
+    border: 2px solid var(--color-neutral);
     border-radius: var(--border-radius);
     padding: 20px 30px;
     display: flex;
     align-items: center;
     gap: 20px;
     margin-bottom: 50px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .meta-icon {
-    background-color: var(--color-primary); 
+    background-color: var(--color-primary);
     color: var(--color-text-dark);
     width: 50px;
     height: 50px;
@@ -368,7 +371,7 @@ p {
 
 .card-free {
     background-color: var(--color-secondary);
-    border-color: var(--color-secondary);
+    /* border-color: var(--color-secondary); */
 }
 
 .card-free .price {
