@@ -1,0 +1,746 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=DM+Sans:wght@300;400;500&display=swap');
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .lp {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--color-text-primary);
+    max-width: 680px;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: var(--color-background-info);
+    color: var(--color-text-info);
+    padding: 4px 12px;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+
+  h1.hero {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  h1.hero em {
+    font-style: italic;
+    color: var(--color-text-info);
+  }
+
+  .subtitle {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-primary {
+    display: inline-block;
+    background: var(--color-text-primary);
+    color: var(--color-background-primary);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 14px 28px;
+    border-radius: var(--border-radius-lg);
+    margin-right: 12px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    border: none;
+  }
+
+  .cta-secondary {
+    display: inline-block;
+    background: transparent;
+    color: var(--color-text-primary);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 14px 0;
+    text-decoration: underline;
+    cursor: pointer;
+    border: none;
+  }
+
+  .divider {
+    border: none;
+    border-top: 0.5px solid var(--color-border-tertiary);
+    margin: 2.5rem 0;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    margin-bottom: 0.5rem;
+  }
+
+  h2.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+  }
+
+  h2.section-title em {
+    font-style: italic;
+    color: var(--color-text-info);
+  }
+
+  .body-text {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--color-text-secondary);
+    margin-bottom: 1rem;
+  }
+
+  .pain-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 1.5rem 0;
+  }
+
+  .pain-card {
+    background: var(--color-background-secondary);
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-lg);
+    padding: 1rem 1.25rem;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+  }
+
+  .highlight-block {
+    border-left: 2px solid var(--color-border-info);
+    padding: 1rem 1.25rem;
+    background: var(--color-background-info);
+    border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+    margin: 1.5rem 0;
+  }
+
+  .highlight-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--color-text-info);
+  }
+
+  /* META */
+  .meta-box {
+    background: var(--color-background-warning);
+    border: 1.5px solid var(--color-border-warning);
+    border-radius: var(--border-radius-lg);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .meta-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .meta-title {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-warning);
+    margin-bottom: 4px;
+  }
+
+  .meta-text {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--color-text-primary);
+  }
+
+  /* RETOS */
+  .retos-list {
+    list-style: none;
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .reto-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: var(--color-background-secondary);
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-md);
+    padding: 12px 16px;
+  }
+
+  .reto-num {
+    min-width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--color-background-primary);
+    border: 1px solid var(--color-border-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .reto-content {}
+
+  .reto-name {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+
+  .reto-desc {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+  }
+
+  .reto-tag {
+    display: inline-block;
+    font-size: 11px;
+    background: var(--color-background-info);
+    color: var(--color-text-info);
+    border-radius: 100px;
+    padding: 2px 8px;
+    margin-top: 4px;
+  }
+
+  /* PILOTO */
+  .piloto-card {
+    border: 2px solid var(--color-border-warning);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    margin: 1.5rem 0;
+  }
+
+  .piloto-header {
+    background: var(--color-background-warning);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .piloto-eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-text-warning);
+    margin-bottom: 2px;
+  }
+
+  .piloto-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+  }
+
+  .piloto-spots {
+    background: var(--color-background-primary);
+    border: 0.5px solid var(--color-border-warning);
+    border-radius: var(--border-radius-md);
+    padding: 8px 14px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .piloto-spots-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-text-warning);
+    line-height: 1;
+  }
+
+  .piloto-spots-label {
+    font-size: 10px;
+    color: var(--color-text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .piloto-body {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .piloto-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .piloto-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  .piloto-price-note {
+    font-size: 13px;
+    color: var(--color-text-tertiary);
+  }
+
+  /* GARANTIA */
+  .garantia-box {
+    background: var(--color-background-success);
+    border: 1px solid var(--color-border-success);
+    border-radius: var(--border-radius-md);
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .garantia-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .garantia-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text-success);
+    margin-bottom: 3px;
+  }
+
+  .garantia-text {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  .piloto-features {
+    list-style: none;
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .piloto-features li {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .check {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--color-background-success);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .piloto-cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 14px;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    background: var(--color-text-primary);
+    color: var(--color-background-primary);
+    border: none;
+    margin-top: 1rem;
+  }
+
+  .piloto-sub {
+    font-size: 12px;
+    color: var(--color-text-tertiary);
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  /* REQUISITOS */
+  .req-box {
+    background: var(--color-background-secondary);
+    border: 0.5px solid var(--color-border-secondary);
+    border-radius: var(--border-radius-md);
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+  }
+
+  .req-title {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  .req-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .req-list li {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.5;
+  }
+
+  .req-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-text-tertiary);
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+
+  /* GRATIS */
+  .free-box {
+    background: var(--color-background-secondary);
+    border: 0.5px solid var(--color-border-secondary);
+    border-radius: var(--border-radius-lg);
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin: 1.5rem 0;
+  }
+
+  .free-box-title {
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  .free-box-sub {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    max-width: 380px;
+  }
+
+  .btn-free {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    background: var(--color-text-primary);
+    color: var(--color-background-primary);
+    padding: 12px 20px;
+    border-radius: var(--border-radius-md);
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  /* NO ES TU MOMENTO */
+  .no-momento {
+    background: var(--color-background-secondary);
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-md);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .no-momento-title {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+
+  .no-momento-text {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 520px) {
+    .pain-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .piloto-features {
+      grid-template-columns: 1fr;
+    }
+
+    h1.hero {
+      font-size: 28px;
+    }
+
+    h2.section-title {
+      font-size: 22px;
+    }
+  }
+</style>
+
+<div class="lp">
+
+  <!-- HERO -->
+  <div style="padding: 2rem 0 0;">
+    <span class="tag">Grupo piloto · Máx. 10 personas · Inicia 4 de mayo</span>
+    <h1 class="hero">Lo que nadie te dice<br>sobre crear contenido.<br><em>Y el reto para probarlo.</em></h1>
+    <p class="subtitle">Llevas tiempo creando contenido para que más personas te conozcan y así aumentar tus ventas.
+      Pero por más que le dediques, no logras crecer. Y la respuesta no está en editar mejor ni en usar más IA.</p>
+    <button class="cta-primary">Quiero aplicar al grupo piloto</button>
+    <button class="cta-secondary">Ver el reto gratis primero →</button>
+  </div>
+
+  <hr class="divider">
+
+  <!-- EL PROBLEMA REAL -->
+  <div>
+    <p class="section-label">Lo que nadie te dice</p>
+    <h2 class="section-title">El problema no es<br><em>cómo creas el contenido.</em></h2>
+    <p class="body-text">Quizás crees que necesitas aprender a editar mejor o usar la IA para crear más contenido. Te lo
+      digo con total honestidad: eso solo no va a funcionar. A mí tampoco me funcionó al principio.</p>
+
+    <div class="highlight-block">
+      <p class="highlight-text">"Cuando empecé, pensé que era solo cuestión de llamar la atención. Estaba equivocado."
+      </p>
+    </div>
+
+    <p class="body-text">Lo que descubrí es que primero necesitas entender quién es tu cliente ideal, cómo tus servicios
+      le ayudan a resolver sus problemas reales, y aplicar estrategias ajustadas a tu personalidad. Solo entonces tiene
+      sentido dominar la edición y usar la IA. Hay que empezar por el principio.</p>
+
+    <div class="pain-grid">
+      <div class="pain-card"><strong>Publicas seguido pero no llegas a nuevas personas.</strong> Tu contenido siempre
+        llega a los mismos.</div>
+      <div class="pain-card"><strong>Las redes te consumen demasiado tiempo.</strong> Y aun así sientes que no avanzan.
+      </div>
+      <div class="pain-card"><strong>Dependes de pocas oportunidades.</strong> Porque muy poca gente sabe cómo puedes
+        ayudarles.</div>
+      <div class="pain-card"><strong>Crees que necesitas más herramientas.</strong> Cuando lo que necesitas es una
+        estrategia clara.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- EL RETO -->
+  <div>
+    <p class="section-label">La solución</p>
+    <h2 class="section-title">7 semanas.<br><em>6 retos. Una meta concreta.</em></h2>
+    <p class="body-text">Antes de abrir los retos al público en junio, necesito probar que realmente funcionan. Por eso
+      estoy abriendo un grupo piloto de máximo 10 personas — un espacio donde haremos los retos juntos, con seguimiento
+      en vivo, resolviendo dudas en tiempo real y acompañándonos en el proceso.</p>
+
+    <div class="meta-box">
+      <span class="meta-icon">🏆</span>
+      <div>
+        <p class="meta-title">La meta concreta al terminar</p>
+        <p class="meta-text">Que publiques 6 videos con estrategia y viralices al menos uno que te traiga clientes de
+          forma constante.</p>
+      </div>
+    </div>
+
+    <ul class="retos-list">
+      <li class="reto-item">
+        <div class="reto-num">1</div>
+        <div class="reto-content">
+          <p class="reto-name">Define tu marca personal</p>
+          <p class="reto-desc">Encuentra tu diferencial, a quién le hablas y qué problema resuelves. La base de todo lo
+            que viene.</p>
+        </div>
+      </li>
+      <li class="reto-item">
+        <div class="reto-num">2</div>
+        <div class="reto-content">
+          <p class="reto-name">Guiones virales</p>
+          <p class="reto-desc">Aprende a crear contenido que para, que engancha y que hace que la gente quiera más de
+            ti.</p>
+        </div>
+      </li>
+      <li class="reto-item">
+        <div class="reto-num">3</div>
+        <div class="reto-content">
+          <p class="reto-name">Grabación pro y natural</p>
+          <p class="reto-desc">Luz, cámara, confianza. Videos que se ven y suenan bien con lo que ya tienes.</p>
+        </div>
+      </li>
+      <li class="reto-item">
+        <div class="reto-num">4</div>
+        <div class="reto-content">
+          <p class="reto-name">Edición en CapCut Pro</p>
+          <p class="reto-desc">Trucos para editar rápido y dinámico. Videos que se ven profesionales sin que te lleve el
+            día.</p>
+        </div>
+      </li>
+      <li class="reto-item">
+        <div class="reto-num">5</div>
+        <div class="reto-content">
+          <p class="reto-name">Estrategia que atrae clientes</p>
+          <p class="reto-desc">Posiciónate como la solución obvia. Contenido que genera confianza y lleva a la compra.
+          </p>
+        </div>
+      </li>
+      <li class="reto-item">
+        <div class="reto-num">6</div>
+        <div class="reto-content">
+          <p class="reto-name">Automatizaciones con IA que venden por ti</p>
+          <p class="reto-desc">Historias e IA que trabajan mientras descansas. Tu marca personal en piloto automático.
+          </p>
+        </div>
+      </li>
+    </ul>
+
+    <p class="body-text" style="font-size:13px; color: var(--color-text-tertiary);">Todos los retos incluyen recursos,
+      ejemplos y prompts para apoyarte en herramientas de IA.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- GRUPO PILOTO / INVERSIÓN -->
+  <div>
+    <p class="section-label">Grupo piloto</p>
+    <h2 class="section-title">Hazlo con acompañamiento.<br><em>Y con garantía.</em></h2>
+    <p class="body-text">Este no es un curso grabado que terminas solo. Es un grupo donde nos acompañamos semana a
+      semana — con sesiones en vivo, dudas resueltas en tiempo real y feedback directo sobre tu proceso.</p>
+
+    <div class="piloto-card">
+      <div class="piloto-header">
+        <div>
+          <p class="piloto-eyebrow">Grupo piloto · Inicia 4 de mayo</p>
+          <p class="piloto-title">7 semanas con acompañamiento</p>
+        </div>
+        <div class="piloto-spots">
+          <p class="piloto-spots-num">10</p>
+          <p class="piloto-spots-label">cupos máx.</p>
+        </div>
+      </div>
+
+      <div class="piloto-body">
+        <div class="piloto-price-row">
+          <span class="piloto-price">$700.000 COP</span>
+          <span class="piloto-price-note">precio piloto · una sola vez</span>
+        </div>
+
+        <div class="garantia-box">
+          <span class="garantia-icon">🛡️</span>
+          <div>
+            <p class="garantia-title">Garantía sin letra pequeña</p>
+            <p class="garantia-text">Si cumples todos los retos y aun así no logras viralizar un video ni atraer
+              clientes, te devuelvo el dinero. Todo el proceso lo compartiré en mis redes para que sea 100%
+              transparente.</p>
+          </div>
+        </div>
+
+        <ul class="piloto-features">
+          <li><span class="check"><svg viewBox="0 0 8 8" width="8" height="8">
+                <polyline points="1,4 3,6 7,2" fill="none" stroke="#16a34a" stroke-width="1.5" />
+              </svg></span>6 retos con seguimiento</li>
+          <li><span class="check"><svg viewBox="0 0 8 8" width="8" height="8">
+                <polyline points="1,4 3,6 7,2" fill="none" stroke="#16a34a" stroke-width="1.5" />
+              </svg></span>Sesiones en vivo</li>
+          <li><span class="check"><svg viewBox="0 0 8 8" width="8" height="8">
+                <polyline points="1,4 3,6 7,2" fill="none" stroke="#16a34a" stroke-width="1.5" />
+              </svg></span>Dudas resueltas en tiempo real</li>
+          <li><span class="check"><svg viewBox="0 0 8 8" width="8" height="8">
+                <polyline points="1,4 3,6 7,2" fill="none" stroke="#16a34a" stroke-width="1.5" />
+              </svg></span>Recursos, prompts e IA</li>
+          <li><span class="check"><svg viewBox="0 0 8 8" width="8" height="8">
+                <polyline points="1,4 3,6 7,2" fill="none" stroke="#16a34a" stroke-width="1.5" />
+              </svg></span>Clases grabadas</li>
+          <li><span class="check"><svg viewBox="0 0 8 8" width="8" height="8">
+                <polyline points="1,4 3,6 7,2" fill="none" stroke="#16a34a" stroke-width="1.5" />
+              </svg></span>Garantía de resultados</li>
+        </ul>
+
+        <div class="req-box">
+          <p class="req-title">¿Esto es para ti si…</p>
+          <ul class="req-list">
+            <li><span class="req-dot"></span>Eres profesional o dueño de negocio y quieres crecer tu marca personal con
+              contenido.</li>
+            <li><span class="req-dot"></span>Puedes dedicar entre 1 y 2 horas de lunes a viernes durante 7 semanas.</li>
+            <li><span class="req-dot"></span>Estás dispuesto a aplicar lo que aprendes, no solo a escucharlo.</li>
+          </ul>
+        </div>
+
+        <button class="piloto-cta">Quiero aplicar al grupo piloto →</button>
+        <p class="piloto-sub">Llena el formulario antes del 2 de mayo. Te escribo el sábado con mi respuesta.</p>
+        <p class="piloto-sub" style="margin-top: 4px;">No importa si solo se unen 1 o 2 personas — el grupo arranca el 4
+          de mayo.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- REGALO GRATIS -->
+  <div class="free-box">
+    <div>
+      <p class="free-box-title">🎁 Un regalo para ti antes de decidir</p>
+      <p class="free-box-sub">Mi reto gratuito de hablar a cámara. Hacerlo fue lo que me ayudó a crear contenido con
+        naturalidad y a que grabar se volviera mucho más sencillo. Úsalo y aprovéchalo al máximo.</p>
+    </div>
+    <button class="btn-free">Acceder gratis</button>
+  </div>
+
+  <hr class="divider">
+
+  <!-- NO ES TU MOMENTO -->
+  <div class="no-momento">
+    <p class="no-momento-title">¿Aún no es tu momento?</p>
+    <p class="no-momento-text">Está perfecto. Sígueme en redes — sigo compartiendo trucos y aprendizajes todos los días.
+      A finales de junio abriré los retos al público en general. Recuerda: siempre se vale aprender.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CIERRE -->
+  <div style="text-align: center; padding-bottom: 2rem;">
+    <p class="section-label" style="text-align:center;">Para cerrar</p>
+    <h2 class="section-title" style="text-align:center;">No necesitas más seguidores.<br><em>Necesitas que los correctos
+        te encuentren.</em></h2>
+    <p class="body-text" style="text-align:center; max-width: 480px; margin: 0 auto 1.5rem;">En 7 semanas puedes tener
+      un sistema claro, contenido que funciona y al menos un video que te esté trayendo clientes mientras duermes.</p>
+    <button class="cta-primary">Quiero aplicar al grupo piloto</button>
+    <p style="margin-top: 12px; font-size: 13px; color: var(--color-text-tertiary);">¿Dudas? Empieza con el reto gratis
+      y decide después.</p>
+  </div>
+
+</div>
